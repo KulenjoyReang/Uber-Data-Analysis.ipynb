@@ -1,0 +1,13 @@
+data['CATEGORY*'].value_counts()
+
+sns.countplot(x='CATEGORY*',data=data)
+
+-- How long do people travel with Uber?
+data['MILES*'].plot.hist()
+
+-- What Hour Do Most People Take Uber To Their Destination?
+hours = data['START_DATE*'].dt.hour.value_counts()
+hours.plot(kind='bar',color='red',figsize=(10,5))
+plt.xlabel('Hours')
+plt.ylabel('Frequency')
+plt.title('Number of trips Vs hours')
