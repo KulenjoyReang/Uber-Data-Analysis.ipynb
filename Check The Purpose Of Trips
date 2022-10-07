@@ -1,0 +1,13 @@
+data['PURPOSE*'].value_counts().plot(kind='bar',figsize=(10,5),color='brown')
+
+-- Which Day Has The Highest Number Of Trips
+data['WEEKDAY'].value_counts().plot(kind='bar',figsize=(10,5),color='blue')
+
+-- What Are The Number Of Trips Per Each Day?
+data['DAY'].value_counts().plot(kind='bar',figsize=(10,5),color='green')
+
+-- What Are The Trips In The Month
+data['MONTH'].value_counts().plot(kind='bar',figsize=(10,5),color='black')
+
+-- The starting points of trips. Where Do People Start Boarding Their Trip From Most?
+data['START*'].value_counts().plot(kind='bar',figsize=(25,10),color='blue')
