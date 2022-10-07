@@ -1,0 +1,31 @@
+data.isnull().any()
+
+data.isnull().sum()
+
+data=data.dropna()
+
+data.isnull().sum()
+
+-- Now we can see that there are not missing values in the dataset.
+
+data['START_DATE*'] = pd.to_datetime(data['START_DATE*'], format="%m/%d/%Y %H:%M")
+data['END_DATE*'] = pd.to_datetime(data['END_DATE*'], format="%m/%d/%Y %H:%M")
+
+hour=[]
+day=[]
+dayofweek=[]
+month=[]
+weekday=[]
+for x in data['START_DATE*']:
+    hour.append(x.hour)
+    day.append(x.day)
+    dayofweek.append(x.dayofweek)
+    month.append(x.month)
+    weekday.append(calendar.day_name[dayofweek[-1]])
+data['HOUR']=hour
+data['DAY']=day
+data['DAY_OF_WEEK']=dayofweek
+data['MONTH']=month
+data['WEEKDAY']=weekday
+
+data.head()
